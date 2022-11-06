@@ -1,0 +1,29 @@
+This is a basic Docker project where you'll learn to create you own custom image or your node-application image and will push it to docker hub (repository):
+
+Steps :
+1. Create your simple node app 
+
+2. In the packgae.json add the below script to start our app 
+
+    "scripts": {
+      "start": "node index.js"
+     },
+     
+3. Now create a Dockerfile with required configuration (Please refer the my-node-app/Dockerfile section)
+
+4. Once dockerfile is created, build the docker image of your application by running the below command 
+  CMD ->  " docker build -t my-node-app . "
+  here -t refers to the tag/name of your image 
+  
+5. Now you can run the container of this image by running any one command mentioned below
+
+" Docker run -d -p 3000:3000 my-node-app "  OR " Docker container run -d -p 3000:3000 my-node-app "
+
+Here -d : refers to container running in detach/background mode
+     -p : refers to portmapping which is required to access the application externally
+     
+ 6. You can verify the application running by hitting localhost:3000 in your browser.
+ 
+ 7. The final step is to push your docker image to Docker hub repository to make it available public/private.
+ 
+      CMD -->  " docker push your_username/my-node-app
